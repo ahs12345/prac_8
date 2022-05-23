@@ -68,6 +68,7 @@ using namespace std;
                 printf("%d ", position);
                 return position;
             }
+            iterator = iterator->getNext();
         }
         cout << "0 ";
         return 0;
