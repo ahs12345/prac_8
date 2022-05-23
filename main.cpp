@@ -7,7 +7,6 @@ using namespace std;
 int main() {
 
 
-/*
 int myArray[100];
 string input;
 int count = 0;
@@ -116,7 +115,7 @@ if (input == "AF")
 
 
 
-*/
+/*
 
 int myArray[] = {5, 2, 7, 10};
 int myArray2[] = {3, 4, 2, 1};
@@ -134,12 +133,12 @@ list2.printItems();
 
 
 cout << endl;
-*/
+
 list3.search(5);
 list3.printItems();
 cout << endl;
 
-
+*/
 
 
 
