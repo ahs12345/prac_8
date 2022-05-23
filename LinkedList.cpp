@@ -11,6 +11,7 @@ using namespace std;
     }
     LinkedList::LinkedList(int myArray[], int arraySize){
         head = NULL;
+        arrayLength = arraySize;
         for (int i =0; i < arraySize; i++){
             addEnd(myArray[i]);
         }
@@ -40,20 +41,19 @@ using namespace std;
             int count = 1;
             Node * iterator = head;
 
-            while(iterator->getNext()){
-                if (count == position){
+            while(iterator){
+                if (count == position-1){
                     Node* tempNode = new Node(newItem, iterator->getNext());
                     iterator->setNext(tempNode);
                     break;
                 }
-                else if(count > position){
+                iterator = iterator->getNext();
+                if(count >= position){
                     addEnd(newItem);
                 }
-                iterator = iterator->getNext();
-                count ++;
+                count++;
+                
             }
-
-
         }
         
 
@@ -83,20 +83,22 @@ using namespace std;
     void LinkedList::deleteEnd(){
         int count = 1;
         Node* iterator = head;
-        while (iterator->getNext()){
+        while (iterator){
             if (iterator->getNext()->getNext() == NULL){
 
                 Node* memory = iterator->getNext();
-                memory->setNext(NULL);
+                iterator->setNext(NULL);
                 delete(memory);
 
-            } 
+            }
+            count++;
+            iterator = iterator->getNext(); 
         }
 
     }
     void LinkedList::deletePosition(int position){
 
-        if (position < 1){
+        if (position < 1 || position > arrayLength){
             cout << "outside range";
             return;
         }
@@ -104,6 +106,12 @@ using namespace std;
             deleteFront();
             return;
         }
+
+        if (position == arrayLength){
+            deleteEnd();
+            return;
+        }
+
         int count = 1;
         Node * iterator = head;
 
@@ -114,12 +122,8 @@ using namespace std;
                 iterator->setNext(iterator->getNext()->getNext());
                 delete(memory);
             }
-            if (count > position){
-                cout << "outside range";
-                return;
-            }
-            iterator = iterator->getNext();
             count++;
+            iterator = iterator->getNext();
         }
         
 
@@ -128,20 +132,20 @@ using namespace std;
     int LinkedList::getItem(int position){
         int count = 1;
         Node * iterator = head;
-        if (iterator){
             while (iterator){
                 if (count == position){
                     printf("%d ", iterator->getData());
                     return iterator->getData();
                 }
-                else if(count > position){
+                iterator = iterator->getNext();
+                count++;
+            }
+
+            if(count > position){
                     cout << numeric_limits < int >::max() << " ";
                     return numeric_limits < int >::max();
-                }
-            iterator = iterator->getNext();
-            count++;
             }
-        }
+        
         else {
             cout << numeric_limits < int >::max() << " ";
             return numeric_limits < int >::max();

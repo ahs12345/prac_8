@@ -18,6 +18,7 @@ class LinkedList{
     void deletePosition(int position);
     int getItem(int position);
     void printItems();
+    int arrayLength;
     ~LinkedList();
 
     

@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
 
+
 int myArray[100];
 string input;
 int count = 0;
@@ -116,6 +117,7 @@ if (input == "AF")
 
 
 /*
+
 int myArray[] = {5, 2, 7, 10};
 int myArray2[] = {3, 4, 2, 1};
 int myArray3[] = {45, 20, 2, 10};
@@ -123,20 +125,22 @@ int myArray3[] = {45, 20, 2, 10};
 LinkedList list1(myArray, 4);
 LinkedList list2(myArray2, 4);
 LinkedList list3(myArray3, 4);
-
-list1.addAtPosition(3, 9);
+list1.addAtPosition(1, 9);
 list1.printItems();
 
-cout << endl;
-
-list2.deletePosition(3);
+list2.deleteEnd();;
 list2.printItems();
 
+
 cout << endl;
 
-list3.getItem(3);
+list3.getItem(5);
 list3.printItems();
+cout << endl;
 */
+
+
+
 
 
 
