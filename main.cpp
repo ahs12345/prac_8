@@ -36,9 +36,7 @@ if (input == "AF")
     {
 
         cin >> param1;
-
-        myLinkedList.addFront(param1);
-
+        myLinkedList.addEnd(param1);
         myLinkedList.printItems();
 
     }
@@ -48,11 +46,8 @@ if (input == "AF")
     {
 
         cin >> param1;
-
         cin >> param2;
-
         myLinkedList.addAtPosition(param1, param2);
-
         myLinkedList.printItems();
 
     }
@@ -62,9 +57,7 @@ if (input == "AF")
     {
 
         cin >> param1;
-
         myLinkedList.search(param1);
-
         myLinkedList.printItems();
 
     }
@@ -74,7 +67,6 @@ if (input == "AF")
     {
 
         myLinkedList.deleteFront();
-
         myLinkedList.printItems();
 
     }
@@ -84,7 +76,6 @@ if (input == "AF")
     {
 
         myLinkedList.deleteEnd();
-
         myLinkedList.printItems();
 
     }
@@ -96,7 +87,6 @@ if (input == "AF")
         cin >> param1;
 
         myLinkedList.deletePosition(param1);
-
         myLinkedList.printItems();
 
     }
